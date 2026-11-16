@@ -1,13 +1,308 @@
-<!doctype html>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Báo cáo kênh YouTube</title>
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Số liệu kênh YouTube</title>
 <style>
-body{font-family:system-ui,-apple-system,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1.5rem;background:#111;color:#eee;line-height:1.6}
-a{color:#6ab7ff}
-li{margin:.5rem 0}
-</style>
-<h1>Báo cáo kênh YouTube</h1>
-<ul>
-  <li><a href="dovui60s_channel/">Đố Vui 60s (@dovui60s_channel)</a> — 16/11/2026</li>
-</ul>
+:root{--surface:#fcfcfb;--page:#f9f9f7;--ink:#0b0b0b;--ink2:#52514e;--grid:#e1e0d9;--ring:rgba(11,11,11,.10);--series:#2a78d6;--font:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--surface:#1a1a19;--page:#0d0d0d;--ink:#f0efec;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--series:#3987e5}}
+:root[data-theme="dark"]{color-scheme:dark;--surface:#1a1a19;--page:#0d0d0d;--ink:#f0efec;--ink2:#c3c2b7;--grid:#2c2c2a;--ring:rgba(255,255,255,.10);--series:#3987e5}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.5 var(--font)}
+main{max-width:1080px;margin:0 auto;padding:32px 20px;display:grid;gap:20px}
+h1{font-size:24px;margin:0;text-wrap:balance} h2{font-size:16px;margin:0 0 4px} h3{font-size:14px;margin:16px 0 0}
+header p,.note{margin:4px 0 0;color:var(--ink2);font-size:13px} .note{max-width:75ch}
+a{color:inherit} :focus-visible{outline:2px solid var(--series);outline-offset:2px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:8px;padding:16px;min-width:0}
+.card .card{background:var(--page)} .tiles+h3{margin-top:20px}
+.label{color:var(--ink2);font-size:13px} .value{font-size:32px;font-weight:600;line-height:1.3}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:8px 24px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:12px 0 0} dt{color:var(--ink2);font-size:13px} dd{margin:0}
+ul{margin:8px 0 0;padding-left:18px;display:grid;gap:6px} ol{margin:8px 0 0;padding-left:20px;display:grid;gap:6px}
+.wrap{overflow-x:auto;margin-top:12px} table{width:100%;border-collapse:collapse} .videos,.ideas{min-width:860px} .ideas td{vertical-align:top}
+th{text-align:left;font-size:12px;font-weight:500;color:var(--ink2);padding:6px 10px 6px 0;border-bottom:1px solid var(--grid);white-space:nowrap}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--grid)} tr:last-child td{border-bottom:0}
+th button{all:unset;cursor:pointer;text-decoration:underline dotted} th[aria-sort] button{color:var(--ink);font-weight:600;text-decoration:none}
+.num{font-variant-numeric:tabular-nums} .r{text-align:right} td:last-child,th:last-child{padding-right:0}
+.vc{display:flex;align-items:center;gap:8px;min-width:190px} .bar{display:block;height:14px;min-width:3px;background:var(--series);border-radius:0 4px 4px 0}
+.chip{font-size:11px;border:1px solid var(--ring);border-radius:4px;padding:0 5px;color:var(--ink2);white-space:nowrap}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+.tabs button{font:inherit;cursor:pointer;background:var(--surface);color:var(--ink2);
+  border:1px solid var(--ring);border-radius:999px;padding:6px 16px}
+.tabs button[aria-selected="true"]{background:var(--series);border-color:var(--series);color:#fff;font-weight:600}
+[role="tabpanel"]{display:grid;gap:20px}
+[role="tabpanel"][hidden]{display:none}
+h2.ch{font-size:22px;margin:0}
+</style></head><body><main>
+<header><h1>Số liệu kênh YouTube</h1><p>Báo cáo của hai kênh trong một trang. Chọn kênh để xem.</p>
+<div class="tabs" role="tablist" aria-label="Chọn kênh"><button role="tab" id="tab-guessit" aria-controls="panel-guessit" aria-selected="true">GuessIt</button><button role="tab" id="tab-dovui" aria-controls="panel-dovui" aria-selected="false">Đố Vui 60s</button></div></header>
+<div role="tabpanel" id="panel-guessit" aria-labelledby="tab-guessit">
+<header><h2 class="ch">Kênh GuessItTrivia-f8p</h2><p>33 video công khai · số liệu lúc 09:10 16/11/2026 (giờ Việt Nam) · <a href="https://www.youtube.com/@GuessItTrivia-f8p" target="_blank" rel="noopener">@GuessItTrivia-f8p</a></p></header><section class="tiles" aria-label="Tổng toàn kênh"><div class="card"><div class="label">Lượt xem</div><div class="value">9.099</div></div><div class="card"><div class="label">Lượt like</div><div class="value">73</div></div><div class="card"><div class="label">Comment</div><div class="value">4</div></div><div class="card"><div class="label">Người đăng ký</div><div class="value">33</div></div><div class="card"><div class="label">Lượt share</div><div class="value">0</div></div></section><section class="card"><h2>So với lần chạy trước (09:54 09/11/2026)</h2><div class="tiles"><div class="card"><div class="label">Lượt xem tăng</div><div class="value">+5.622</div></div><div class="card"><div class="label">Like tăng</div><div class="value">+43</div></div><div class="card"><div class="label">Comment tăng</div><div class="value">+2</div></div><div class="card"><div class="label">Người đăng ký tăng</div><div class="value">+24</div></div><div class="card"><div class="label">Video mới</div><div class="value">7</div></div></div><h3>Video tăng lượt xem nhiều nhất</h3><div class="wrap"><table><tbody><tr><td class="t">How Much Do You Know About Christmas? 🎄🎅</td><td><div class="vc"><span class="bar" style="width:150.0px"></span><span class="num">4.387</span></div></td></tr><tr><td class="t">🦃 Thanksgiving Quiz – How Much Do You Know About Thanksgiving?</td><td><div class="vc"><span class="bar" style="width:10.3px"></span><span class="num">300</span></div></td></tr><tr><td class="t">Can You Guess the Car Brand?</td><td><div class="vc"><span class="bar" style="width:7.1px"></span><span class="num">207</span></div></td></tr><tr><td class="t">Guess the Superhero by Their Silhouette 🦸</td><td><div class="vc"><span class="bar" style="width:4.2px"></span><span class="num">123</span></div></td></tr><tr><td class="t">How Well Do You Remember 2026? 📅 Year in Review Quiz</td><td><div class="vc"><span class="bar" style="width:3.0px"></span><span class="num">88</span></div></td></tr></tbody></table></div></section><section class="card"><h2>Trang kênh</h2><dl><dt>Ngày lập</dt><dd>30/09/2026</dd><dt>Nội dung</dt><dd>32 video dài, 1 Short, chưa có playlist</dd><dt>Nhịp đăng</dt><dd>33 video trong 47 ngày</dd><dt>Lượt xem trang kênh</dt><dd>8,218 views</dd><dt>Mô tả</dt><dd>🧠 GuessIt — Test your brain, one guess at a time!
+
+Daily quiz challenges across Space, Animals, Movies, History, and more. Can you guess it before time runs out?
+
+🎯 New quiz videos every week
+🔥 Fun trivia, brain teasers &amp; &quot;how much do you…</dd></dl></section><section class="card">
+  <h2>Góp ý: vì sao video nhiều hay ít lượt xem</h2>
+  <p class="note">Video đăng sớm có nhiều ngày hơn để gom lượt xem, nên mọi so sánh dưới đây dùng
+    <b>lượt xem mỗi ngày</b> (v/ngày) hoặc mức tăng kể từ lần chạy trước (09/11), không dùng tổng thô.
+    Ở mức vài trăm lượt, chênh vài chục lượt là nhiễu — những chỗ đó đánh dấu là giả thuyết.</p>
+  <div class="two">
+    <div>
+      <h3>Video nhiều lượt xem</h3>
+      <ul>
+        <li><span class="chip">Có số liệu</span> <b>Chủ đề theo mùa là đòn bẩy mạnh nhất của kênh.</b>
+          &quot;How Much Do You Know About Christmas? 🎄🎅&quot; đạt 5.803 lượt sau 13,8 ngày (421 v/ngày) và
+          tăng <b>+4.387</b> chỉ trong 7 ngày qua — một mình nó chiếm 64% toàn kênh.
+          &quot;🦃 Thanksgiving Quiz&quot; mới 4,7 ngày đã 300 lượt (64 v/ngày), đứng nhì.
+          Phản ví dụ: &quot;How Well Do You Remember 2026? 📅&quot; cũng theo mùa nhưng mới 88 lượt (25 v/ngày) —
+          mùa &quot;year in review&quot; rơi vào cuối tháng 12, đăng sớm 5 tuần nên chưa có sóng.</li>
+        <li><span class="chip">Có số liệu</span> <b>Thumbnail hoạt hình sáng + chữ viền dày + bóng đen có dấu &quot;?&quot;.</b>
+          Nhóm dùng công thức này: Car Brand 39,8 v/ngày, Fast Food 25,7, Dinosaur 24,1, Superhero 20,9,
+          Dog Breeds +73 lượt trong tuần. Nhóm dùng ảnh thật/tối, chữ mảnh: Solar System 0,6 v/ngày,
+          Planets 0,2, Movie Quiz chỉ 4,2 dù đã có 44 ngày. Khoảng cách 10–60 lần, không phải nhiễu.</li>
+        <li><span class="chip">Giả thuyết</span> <b>&quot;Đoán thứ quen mặt&quot; ăn hơn &quot;kiểm tra kiến thức&quot;.</b>
+          Logo xe, siêu anh hùng, nhân vật hoạt hình, đồ ăn nhanh, chó — đều ở nhóm trên.
+          Kiến thức tự nhiên/khoa học — thời tiết 0,3 v/ngày, phát minh 0,3, hình học 1,2 — đều ở đáy.
+          Phản ví dụ: &quot;Musical Instruments&quot; là chủ đề kiến thức nhưng đạt 696 lượt (18,3 v/ngày),
+          nên đây là xu hướng chứ chưa phải quy luật.</li>
+        <li><span class="chip">Cần Studio</span> Không đọc được CTR, thời gian xem và nguồn traffic từ bên ngoài.
+          Riêng việc Christmas tăng +4.387 sau khi đã đăng 7 ngày cho thấy <b>YouTube mới đẩy nó vào đề xuất</b>,
+          chứ không phải lượt xem từ người đăng ký — cần mở Studio → Reach để xác nhận.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Video ít lượt xem</h3>
+      <ul>
+        <li><span class="chip">Lỗi đã xác nhận</span> <b>&quot;Plants Quiz 🌿 Can You Guess the Plant?&quot; vẫn dùng
+          thumbnail các hành tinh (Trái Đất, sao Hỏa, sao Mộc, sao Thổ) và chữ &quot;Can You Identify These Planets?&quot;.</b>
+          Video 9 lượt, <b>tăng 0</b> trong 7 ngày qua. Lỗi này đã nêu ở báo cáo 09/11 và chưa được sửa.</li>
+        <li><span class="chip">Lỗi đã xác nhận</span> <b>Tiêu đề &quot;🎮 Topic: Guess the Video Game Character&quot;
+          còn sót chữ &quot;Topic:&quot; của khâu soạn nội dung.</b> Video này có thumbnail thuộc nhóm tốt
+          (bóng đen + dấu &quot;?&quot; + chữ viền dày) nhưng chỉ 15 lượt sau 6,7 ngày (2,3 v/ngày),
+          trong khi Superhero cùng công thức đạt 20,9 v/ngày — chênh 9 lần.</li>
+        <li><span class="chip">Lỗi đã xác nhận</span> <b>Thumbnail của &quot;World Food Quiz: Which Country Is This Dish From? 🍔 🌮&quot;
+          ghi chữ &quot;World Food Challenge&quot;</b> — không khớp tiêu đề, không có ô đáp án, không có dấu &quot;?&quot;.
+          117 lượt / 37,6 ngày = 3,1 v/ngày. Bản khác cùng chủ đề, thumbnail có 10 ô món ăn kèm cờ nước,
+          đạt 105 lượt nhưng thu hút tốt hơn ở giai đoạn đầu.</li>
+        <li><span class="chip">Lỗi đã xác nhận</span> <b>Short duy nhất của kênh chỉ là nền cam trơn với một dấu &quot;?&quot;.</b>
+          2 lượt, tăng 0. Short là kênh phân phối riêng và đang bị bỏ phí hoàn toàn.</li>
+        <li><span class="chip">Giả thuyết</span> <b>Chủ đề hẹp không có lượng tìm kiếm.</b>
+          Olympic Badminton 11 lượt, Natural Phenomena 9, Inventions 7, Currencies 22.
+          Ở mức một con số thì chênh lệch là nhiễu, nhưng cả bốn đều nằm dưới mọi chủ đề &quot;đoán thương hiệu&quot;.</li>
+        <li><span class="chip">Giả thuyết</span> <b>Gần như không có comment (4 comment trên 33 video).</b>
+          Video Christmas có 5.803 lượt nhưng chỉ 4 comment và 44 like (0,76%).
+          Nhiều khả năng video không kêu gọi người xem để lại điểm số trong phần bình luận.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Cần làm gì, theo thứ tự</h2>
+  <ol>
+    <li><b>Hôm nay</b> — Thay thumbnail của &quot;Plants Quiz 🌿&quot;: đang là ảnh hành tinh, phải là ảnh cây/lá
+      theo đúng công thức sáng + chữ viền dày. Đây là lỗi tồn từ 09/11, video đứng im ở 9 lượt.</li>
+    <li><b>Hôm nay</b> — Sửa tiêu đề video game thành &quot;Guess the Video Game Character 🎮 Can You Name Them All?&quot;,
+      bỏ chữ &quot;Topic:&quot;. Thumbnail đã tốt, chỉ tiêu đề đang chặn nó.</li>
+    <li><b>Hôm nay</b> — Sửa chữ trên thumbnail của &quot;World Food Quiz: Which Country Is This Dish From?&quot;
+      cho khớp tiêu đề (đang ghi &quot;World Food Challenge&quot;).</li>
+    <li><b>Hôm nay</b> — Đổi Short 2 lượt: cắt 30 giây hay nhất của video Christmas (câu hỏi khó nhất + đếm ngược)
+      làm Short mới, tận dụng video đang được đề xuất.</li>
+    <li><b>Tuần này</b> — Dồn lịch vào mùa lễ: Giáng sinh còn đẩy mạnh đến 25/12 và Thanksgiving rơi vào 26/11.
+      Hai chủ đề này đang chiếm hai vị trí đầu về v/ngày của kênh.</li>
+    <li><b>Tuần này</b> — Ghim một bình luận dạng &quot;Bạn được mấy điểm? Comment số của bạn 👇&quot;
+      lên 5 video nhiều lượt xem nhất, để sửa tỷ lệ 4 comment / 9.099 lượt.</li>
+    <li><b>Mỗi video mới</b> — Thumbnail bắt buộc theo công thức thắng: nền hoạt hình sáng, chữ viền dày
+      2–3 dòng, một bóng đen có dấu &quot;?&quot; ở giữa, 4–6 ô đáp án quanh viền. Không dùng ảnh thật tối.</li>
+    <li><b>Mỗi video mới</b> — Mở YouTube Studio đúng ngày thứ 7 sau khi đăng và ghi lại số lượt xem 7 ngày đầu.
+      Đây là thước đo duy nhất so sánh công bằng giữa các video; báo cáo này không đọc được nó.</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h2>Chủ đề mới để làm video — tuần này và tuần sau</h2>
+  <p class="note">Chỉ gồm chủ đề kênh <b>chưa</b> đăng. Lịch bám hai mốc: Thanksgiving 26/11 và mùa Giáng sinh
+    đã bắt đầu chạy (video Christmas tăng +4.387 trong 7 ngày qua). Mỗi dòng gắn với lượt xem của một chủ đề
+    tương tự đã có trên kênh.</p>
+  <table class="ideas">
+    <thead>
+      <tr><th>Khi nào</th><th>Chủ đề</th><th>Tiêu đề gợi ý</th><th>Chữ trên thumbnail</th><th>Vì sao chọn</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tuần này — T2 16/11</td>
+        <td>Đoán phim Giáng sinh</td>
+        <td>Guess the Christmas Movie 🎄 Can You Name Them All?</td>
+        <td>GUESS THE / CHRISTMAS MOVIE / Can You Name Them All?</td>
+        <td>Ghép hai thứ mạnh nhất: mùa Giáng sinh (5.803 lượt, 421 v/ngày) và dạng &quot;đoán thứ quen mặt&quot;
+          (Movie Quiz 184, Cartoon 110). Đăng sớm để chạy suốt 5 tuần tới.</td>
+      </tr>
+      <tr>
+        <td>Tuần này — T3 17/11</td>
+        <td>Đoán logo thương hiệu</td>
+        <td>Guess the Brand Logo 🔍 Only 1% Can Score 10/10</td>
+        <td>GUESS THE / BRAND LOGO / 1% score 10/10</td>
+        <td>Car Brand là video không-theo-mùa mạnh nhất kênh: 295 lượt trong 7,4 ngày (39,8 v/ngày),
+          tăng +207 trong tuần qua. Logo thương hiệu nói chung có tệp tìm kiếm rộng hơn hẳn logo xe.</td>
+      </tr>
+      <tr>
+        <td>Tuần này — T5 19/11</td>
+        <td>Đoán giống mèo</td>
+        <td>Cat Breeds Quiz 🐱 Can You Name These Cats?</td>
+        <td>CAT BREEDS / Quiz / Can You Name These Cats?</td>
+        <td>Bản sinh đôi của Dog Breeds (115 lượt, +73 trong tuần qua — nhóm tăng nhanh).
+          Dùng lại đúng bố cục thumbnail đó: 5 con mèo thật + 5 ô bóng đen có dấu &quot;?&quot;.</td>
+      </tr>
+      <tr>
+        <td>Tuần này — T7 21/11</td>
+        <td>Đoán kẹo & chocolate qua vỏ</td>
+        <td>Guess the Candy by Its Wrapper 🍫 Sweet Quiz</td>
+        <td>GUESS THE CANDY / by Its Wrapper 🍫</td>
+        <td>Sweet Treats đạt 183 lượt (9,4 v/ngày) và vẫn tăng +37 trong tuần.
+          Dạng &quot;đoán qua bao bì&quot; đã chứng minh ở Fast Food (25,7 v/ngày).</td>
+      </tr>
+      <tr>
+        <td>Tuần sau — T2 23/11</td>
+        <td>Đoán món ăn Thanksgiving</td>
+        <td>Guess the Thanksgiving Dish 🦃 Holiday Food Quiz</td>
+        <td>GUESS THE / THANKSGIVING DISH / Holiday Food Quiz</td>
+        <td>Đăng trước ngày lễ 3 ngày để bắt đúng đỉnh tìm kiếm. Thanksgiving Quiz hiện 64 v/ngày — cao thứ nhì kênh —
+          và các video đồ ăn (World Food 117, British Food, Fast Food 76) là mảng ổn định.</td>
+      </tr>
+      <tr>
+        <td>Tuần sau — T4 25/11</td>
+        <td>Đoán bài hát Giáng sinh</td>
+        <td>Christmas Songs Quiz 🎵 Can You Guess the Song?</td>
+        <td>CHRISTMAS SONGS / Can You Guess the Song?</td>
+        <td>Giáng sinh (5.803) × âm nhạc (Music Groups 100 lượt, Musical Instruments 696 — 18,3 v/ngày,
+          chủ đề kiến thức mạnh nhất kênh). Dạng nghe-đoán cũng khác biệt so với 32 video nhìn-đoán hiện có.</td>
+      </tr>
+      <tr>
+        <td>Tuần sau — T6 27/11</td>
+        <td>Đoán giá — Black Friday</td>
+        <td>Guess the Price 💰 Black Friday Shopping Quiz</td>
+        <td>GUESS THE PRICE / Black Friday Quiz 💰</td>
+        <td>27/11 là Black Friday, mốc tìm kiếm lớn thứ hai của tháng sau Thanksgiving.
+          Bắt chước đòn bẩy mùa vụ đã cho kênh 64% tổng lượt xem, và là format mới (đoán số, không đoán hình).</td>
+      </tr>
+      <tr>
+        <td>Tuần sau — CN 29/11</td>
+        <td>Đoán động vật mùa đông</td>
+        <td>Winter Animals Quiz ❄️ How Well Do You Know Them?</td>
+        <td>WINTER ANIMALS / Quiz ❄️</td>
+        <td>Mảng động vật là nền ổn định của kênh (Birds 154, Dog Breeds 115, Ocean 114)
+          và lớp phủ mùa đông kéo nó vào sóng tìm kiếm tháng 12.</td>
+      </tr>
+      <tr>
+        <td>Dự phòng — bất kỳ ngày nào thiếu</td>
+        <td>Đoán phim qua emoji</td>
+        <td>Guess the Movie by Emoji 🎬 Emoji Quiz</td>
+        <td>GUESS THE MOVIE / by Emoji 🎬🍿</td>
+        <td>Movie Quiz hiện có thumbnail ảnh thật tối và chỉ đạt 4,2 v/ngày; bản emoji cho phép làm lại
+          đúng công thức sáng + chữ viền dày mà không trùng nội dung cũ.</td>
+      </tr>
+      <tr>
+        <td>Dự phòng — Short mỗi ngày</td>
+        <td>Cắt 1 câu hỏi khó thành Short 30 giây</td>
+        <td>Only 1% Can Answer This 🎄 #shorts</td>
+        <td>ONLY 1% / Can Answer This</td>
+        <td>Short duy nhất của kênh (nền trơn, dấu &quot;?&quot;) có 2 lượt và tăng 0 — kênh phân phối này
+          đang bỏ trống hoàn toàn trong khi đã có sẵn 32 video dài để cắt.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section class="card"><h2>So sánh theo tuần đăng</h2><p class="note">Video đăng càng sớm càng có nhiều thời gian lấy lượt xem, nên các tuần gần đây chưa ngang hàng với tuần đầu.</p><div class="wrap"><table><thead><tr><th>Tuần đăng</th><th class="r">Số video</th><th>Tổng lượt xem</th><th class="r">Lượt xem trung vị</th><th class="r">Like</th><th class="r">Comment</th></tr></thead><tbody><tr><td class="num">28/09 – 04/10</td><td class="num r">3</td><td><div class="vc"><span class="bar" style="width:9.4px"></span><span class="num">403</span></div></td><td class="num r">114,0</td><td class="num r">3</td><td class="num r">0</td></tr><tr><td class="num">05/10 – 11/10</td><td class="num r">4</td><td><div class="vc"><span class="bar" style="width:19.7px"></span><span class="num">845</span></div></td><td class="num r">70,0</td><td class="num r">4</td><td class="num r">0</td></tr><tr><td class="num">12/10 – 18/10</td><td class="num r">4</td><td><div class="vc"><span class="bar" style="width:5.9px"></span><span class="num">255</span></div></td><td class="num r">46,0</td><td class="num r">3</td><td class="num r">0</td></tr><tr><td class="num">19/10 – 25/10</td><td class="num r">5</td><td><div class="vc"><span class="bar" style="width:4.5px"></span><span class="num">192</span></div></td><td class="num r">30,0</td><td class="num r">4</td><td class="num r">0</td></tr><tr><td class="num">26/10 – 01/11</td><td class="num r">5</td><td><div class="vc"><span class="bar" style="width:7.4px"></span><span class="num">318</span></div></td><td class="num r">26,0</td><td class="num r">5</td><td class="num r">0</td></tr><tr><td class="num">02/11 – 08/11</td><td class="num r">5</td><td><div class="vc"><span class="bar" style="width:150.0px"></span><span class="num">6.433</span></div></td><td class="num r">115,0</td><td class="num r">47</td><td class="num r">4</td></tr><tr><td class="num">09/11 – 15/11</td><td class="num r">7</td><td><div class="vc"><span class="bar" style="width:15.2px"></span><span class="num">653</span></div></td><td class="num r">76,0</td><td class="num r">7</td><td class="num r">0</td></tr></tbody></table></div></section><section class="card"><h2>Tất cả 33 video</h2><p class="note">Bấm tên cột để sắp xếp. “–” ở Like và Comment: YouTube không hiển thị số, thường là 0. “–” ở Like/100 xem: chưa có like hoặc dưới 20 lượt xem.</p><div class="wrap"><table id="videos-guessit" class="videos"><thead><tr><th><button>Video</button></th><th><button>Ngày đăng</button></th><th><button>Dài</button></th><th aria-sort=descending><button>Lượt xem</button></th><th class=r><button>Tăng</button></th><th class=r><button>Like</button></th><th class=r><button>Comment</button></th><th class=r><button>Like/100 xem</button></th><th class=r><button>Xem/ngày</button></th></tr></thead><tbody><tr><td class="t" data-v="How Much Do You Know About Christmas? 🎄🎅"><a href="https://www.youtube.com/watch?v=qDK8yzf2GOs" target="_blank" rel="noopener">How Much Do You Know About Christmas? 🎄🎅</a></td><td class="num" data-v="1793605779">02/11</td><td class="num" data-v="481">8:01</td><td data-v="5803"><div class="vc"><span class="bar" style="width:150.0px"></span><span class="num">5.803</span></div></td><td class="num r" data-v="4387">+4.387</td><td class="num r" data-v="44">44</td><td class="num r" data-v="4">4</td><td class="num r" data-v="0.758">0,8</td><td class="num r" data-v="421.603">421,6</td></tr><tr><td class="t" data-v="What Are the Most Fascinating Musical Instruments Around the World?🌍🎶"><a href="https://www.youtube.com/watch?v=QHI821fkbj4" target="_blank" rel="noopener">What Are the Most Fascinating Musical Instruments Around the World?🌍🎶</a></td><td class="num" data-v="1791515721">09/10</td><td class="num" data-v="482">8:02</td><td data-v="696"><div class="vc"><span class="bar" style="width:18.0px"></span><span class="num">696</span></div></td><td class="num r" data-v="49">+49</td><td class="num r" data-v="4">4</td><td class="num r" data-v="0">0</td><td class="num r" data-v="0.575">0,6</td><td class="num r" data-v="18.338">18,3</td></tr><tr><td class="t" data-v="🦃 Thanksgiving Quiz – How Much Do You Know About Thanksgiving?"><a href="https://www.youtube.com/watch?v=kpelR6uOEII" target="_blank" rel="noopener">🦃 Thanksgiving Quiz – How Much Do You Know About Thanksgiving?</a></td><td class="num" data-v="1794391351">11/11</td><td class="num" data-v="480">8:00</td><td data-v="300"><div class="vc"><span class="bar" style="width:7.8px"></span><span class="num">300</span></div></td><td class="num r" data-v="300">+300</td><td class="num r" data-v="4">4</td><td class="num r" data-v="0">0</td><td class="num r" data-v="1.333">1,3</td><td class="num r" data-v="64.214">64,2</td></tr><tr><td class="t" data-v="Can You Guess the Car Brand?"><a href="https://www.youtube.com/watch?v=KRjDnUHAJyo" target="_blank" rel="noopener">Can You Guess the Car Brand?</a></td><td class="num" data-v="1794154036">08/11</td><td class="num" data-v="481">8:01</td><td data-v="295"><div class="vc"><span class="bar" style="width:7.6px"></span><span class="num">295</span></div></td><td class="num r" data-v="207">+207</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="39.765">39,8</td></tr><tr><td class="t" data-v="Famous Movies Quiz 🎬 Can You Guess the Movie?"><a href="https://www.youtube.com/watch?v=lzH-presEOU" target="_blank" rel="noopener">Famous Movies Quiz 🎬 Can You Guess the Movie?</a></td><td class="num" data-v="1790994603">03/10</td><td class="num" data-v="480">8:00</td><td data-v="184"><div class="vc"><span class="bar" style="width:4.8px"></span><span class="num">184</span></div></td><td class="num r" data-v="3">+3</td><td class="num r" data-v="3">3</td><td class="num r" data-v="0">0</td><td class="num r" data-v="1.630">1,6</td><td class="num r" data-v="4.183">4,2</td></tr><tr><td class="t" data-v="How Well Do You Know These Sweet Treats ? 🍪"><a href="https://www.youtube.com/watch?v=wvnO-s9aeo4" target="_blank" rel="noopener">How Well Do You Know These Sweet Treats ? 🍪</a></td><td class="num" data-v="1793115971">27/10</td><td class="num" data-v="480">8:00</td><td data-v="183"><div class="vc"><span class="bar" style="width:4.7px"></span><span class="num">183</span></div></td><td class="num r" data-v="37">+37</td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="0.546">0,5</td><td class="num r" data-v="9.417">9,4</td></tr><tr><td class="t" data-v="The Amazing World of Birds: What Makes Each Species Unique? 🕊️🌎"><a href="https://www.youtube.com/watch?v=EpZl3cKTJTU" target="_blank" rel="noopener">The Amazing World of Birds: What Makes Each Species Unique? 🕊️🌎</a></td><td class="num" data-v="1792105219">16/10</td><td class="num" data-v="480">8:00</td><td data-v="154"><div class="vc"><span class="bar" style="width:4.0px"></span><span class="num">154</span></div></td><td class="num r" data-v="4">+4</td><td class="num r" data-v="2">2</td><td class="num r" data-v="0">0</td><td class="num r" data-v="1.299">1,3</td><td class="num r" data-v="4.947">4,9</td></tr><tr><td class="t" data-v="Guess the Superhero by Their Silhouette 🦸"><a href="https://www.youtube.com/watch?v=1dywJvkjOdc" target="_blank" rel="noopener">Guess the Superhero by Their Silhouette 🦸</a></td><td class="num" data-v="1794285445">10/11</td><td class="num" data-v="480">8:00</td><td data-v="123"><div class="vc"><span class="bar" style="width:3.2px"></span><span class="num">123</span></div></td><td class="num r" data-v="123">+123</td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="0.813">0,8</td><td class="num r" data-v="20.856">20,9</td></tr><tr><td class="t" data-v="World Food Quiz: Which Country Is This Dish From? 🍔 🌮"><a href="https://www.youtube.com/watch?v=Yo7Wpa4LS5U" target="_blank" rel="noopener">World Food Quiz: Which Country Is This Dish From? 🍔 🌮</a></td><td class="num" data-v="1791543629">09/10</td><td class="num" data-v="479">7:59</td><td data-v="117"><div class="vc"><span class="bar" style="width:3.0px"></span><span class="num">117</span></div></td><td class="num r" data-v="4">+4</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="3.109">3,1</td></tr><tr><td class="t" data-v="Dog Breeds Quiz 🐶 Can You Name These Dogs?"><a href="https://www.youtube.com/watch?v=E0AUFJgZlCQ" target="_blank" rel="noopener">Dog Breeds Quiz 🐶 Can You Name These Dogs?</a></td><td class="num" data-v="1793724240">03/11</td><td class="num" data-v="479">7:59</td><td data-v="115"><div class="vc"><span class="bar" style="width:3.0px"></span><span class="num">115</span></div></td><td class="num r" data-v="73">+73</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="9.279">9,3</td></tr><tr><td class="t" data-v="How Well Do You Know Ocean Animals? 🦈"><a href="https://www.youtube.com/watch?v=LqlLujYLHiE" target="_blank" rel="noopener">How Well Do You Know Ocean Animals? 🦈</a></td><td class="num" data-v="1790777539">30/09</td><td class="num" data-v="360">6:00</td><td data-v="114"><div class="vc"><span class="bar" style="width:2.9px"></span><span class="num">114</span></div></td><td class="num r" data-v="0">0</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="2.452">2,5</td></tr><tr><td class="t" data-v="Cartoon Characters Quiz 🎬 Who Is This?"><a href="https://www.youtube.com/watch?v=pk-cVDNqSlw" target="_blank" rel="noopener">Cartoon Characters Quiz 🎬 Who Is This?</a></td><td class="num" data-v="1793863544">05/11</td><td class="num" data-v="481">8:01</td><td data-v="110"><div class="vc"><span class="bar" style="width:2.8px"></span><span class="num">110</span></div></td><td class="num r" data-v="83">+83</td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="0.909">0,9</td><td class="num r" data-v="10.203">10,2</td></tr><tr><td class="t" data-v="Can You Guess These Famous Landmarks? 🗽🌍"><a href="https://www.youtube.com/watch?v=TpsD8EneM30" target="_blank" rel="noopener">Can You Guess These Famous Landmarks? 🗽🌍</a></td><td class="num" data-v="1793785632">04/11</td><td class="num" data-v="481">8:01</td><td data-v="110"><div class="vc"><span class="bar" style="width:2.8px"></span><span class="num">110</span></div></td><td class="num r" data-v="60">+60</td><td class="num r" data-v="2">2</td><td class="num r" data-v="0">0</td><td class="num r" data-v="1.818">1,8</td><td class="num r" data-v="9.416">9,4</td></tr><tr><td class="t" data-v="Guess the Country by Its Food 🍜 World Food Quiz"><a href="https://www.youtube.com/watch?v=_WIm1blRA2E" target="_blank" rel="noopener">Guess the Country by Its Food 🍜 World Food Quiz</a></td><td class="num" data-v="1790856017">01/10</td><td class="num" data-v="579">9:39</td><td data-v="105"><div class="vc"><span class="bar" style="width:2.7px"></span><span class="num">105</span></div></td><td class="num r" data-v="5">+5</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="2.303">2,3</td></tr><tr><td class="t" data-v="Can You Guess These Famous Music Groups? 🎵🌎"><a href="https://www.youtube.com/watch?v=02X_iUnYvbQ" target="_blank" rel="noopener">Can You Guess These Famous Music Groups? 🎵🌎</a></td><td class="num" data-v="1792662697">22/10</td><td class="num" data-v="479">7:59</td><td data-v="100"><div class="vc"><span class="bar" style="width:2.6px"></span><span class="num">100</span></div></td><td class="num r" data-v="16">+16</td><td class="num r" data-v="2">2</td><td class="num r" data-v="0">0</td><td class="num r" data-v="2.000">2,0</td><td class="num r" data-v="4.052">4,1</td></tr><tr><td class="t" data-v="Can You Guess the Planet From Its Amazing Fact?"><a href="https://www.youtube.com/watch?v=Xmpx_JLbIik" target="_blank" rel="noopener">Can You Guess the Planet From Its Amazing Fact?</a></td><td class="num" data-v="1793184515">28/10</td><td class="num" data-v="491">8:11</td><td data-v="96"><div class="vc"><span class="bar" style="width:2.5px"></span><span class="num">96</span></div></td><td class="num r" data-v="10">+10</td><td class="num r" data-v="2">2</td><td class="num r" data-v="0">0</td><td class="num r" data-v="2.083">2,1</td><td class="num r" data-v="5.150">5,2</td></tr><tr><td class="t" data-v="How Well Do You Remember 2026? 📅 Year in Review Quiz"><a href="https://www.youtube.com/watch?v=kFIIgpDTe58" target="_blank" rel="noopener">How Well Do You Remember 2026? 📅 Year in Review Quiz</a></td><td class="num" data-v="1794495833">12/11</td><td class="num" data-v="491">8:11</td><td data-v="88"><div class="vc"><span class="bar" style="width:2.3px"></span><span class="num">88</span></div></td><td class="num r" data-v="88">+88</td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="1.136">1,1</td><td class="num r" data-v="25.415">25,4</td></tr><tr><td class="t" data-v="Can You Name These Flowers?🌺🌼"><a href="https://www.youtube.com/watch?v=2p12fMEhdCI" target="_blank" rel="noopener">Can You Name These Flowers?🌺🌼</a></td><td class="num" data-v="1791863249">13/10</td><td class="num" data-v="495">8:15</td><td data-v="77"><div class="vc"><span class="bar" style="width:2.0px"></span><span class="num">77</span></div></td><td class="num r" data-v="0">0</td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="1.299">1,3</td><td class="num r" data-v="2.269">2,3</td></tr><tr><td class="t" data-v="Guess the Fast Food Restaurant by Its Menu 🍟"><a href="https://www.youtube.com/watch?v=gwTmv5CHt94" target="_blank" rel="noopener">Guess the Fast Food Restaurant by Its Menu 🍟</a></td><td class="num" data-v="1794539038">13/11</td><td class="num" data-v="479">7:59</td><td data-v="76"><div class="vc"><span class="bar" style="width:2.0px"></span><span class="num">76</span></div></td><td class="num r" data-v="76">+76</td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="1.316">1,3</td><td class="num r" data-v="25.654">25,7</td></tr><tr><td class="t" data-v="Dinosaur Quiz 🦖 How Well Do You Know Dinosaurs?"><a href="https://www.youtube.com/watch?v=FbWechQikcM" target="_blank" rel="noopener">Dinosaur Quiz 🦖 How Well Do You Know Dinosaurs?</a></td><td class="num" data-v="1794640732">14/11</td><td class="num" data-v="479">7:59</td><td data-v="43"><div class="vc"><span class="bar" style="width:1.1px"></span><span class="num">43</span></div></td><td class="num r" data-v="43">+43</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="24.083">24,1</td></tr><tr><td class="t" data-v="Can You Guess These Famous Football Clubs Around the World? ⚽️"><a href="https://www.youtube.com/watch?v=DCdE25tRkzQ" target="_blank" rel="noopener">Can You Guess These Famous Football Clubs Around the World? ⚽️</a></td><td class="num" data-v="1792537222">21/10</td><td class="num" data-v="480">8:00</td><td data-v="33"><div class="vc"><span class="bar" style="width:0.9px"></span><span class="num">33</span></div></td><td class="num r" data-v="0">0</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="1.263">1,3</td></tr><tr><td class="t" data-v="Can You Find These Geometric Shapes Around You?🔽⚪️"><a href="https://www.youtube.com/watch?v=zCgZx2Y-y4E" target="_blank" rel="noopener">Can You Find These Geometric Shapes Around You?🔽⚪️</a></td><td class="num" data-v="1792623629">22/10</td><td class="num" data-v="484">8:04</td><td data-v="30"><div class="vc"><span class="bar" style="width:0.8px"></span><span class="num">30</span></div></td><td class="num r" data-v="3">+3</td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="3.333">3,3</td><td class="num r" data-v="1.194">1,2</td></tr><tr><td class="t" data-v="How Much Do You Know About Trees and Plants? 🌳"><a href="https://www.youtube.com/watch?v=KVxdUXv41IM" target="_blank" rel="noopener">How Much Do You Know About Trees and Plants? 🌳</a></td><td class="num" data-v="1793006227">26/10</td><td class="num" data-v="481">8:01</td><td data-v="26"><div class="vc"><span class="bar" style="width:0.7px"></span><span class="num">26</span></div></td><td class="num r" data-v="7">+7</td><td class="num r" data-v="2">2</td><td class="num r" data-v="0">0</td><td class="num r" data-v="7.692">7,7</td><td class="num r" data-v="1.256">1,3</td></tr><tr><td class="t" data-v="Solar System Quiz 🪐 How Well Do You Know the Planets?"><a href="https://www.youtube.com/watch?v=XNz-gNDvuSo" target="_blank" rel="noopener">Solar System Quiz 🪐 How Well Do You Know the Planets?</a></td><td class="num" data-v="1791415812">08/10</td><td class="num" data-v="521">8:41</td><td data-v="23"><div class="vc"><span class="bar" style="width:0.6px"></span><span class="num">23</span></div></td><td class="num r" data-v="0">0</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="0.588">0,6</td></tr><tr><td class="t" data-v="Can You Guess These Currencies from Around the World?💸"><a href="https://www.youtube.com/watch?v=TJ6WB0vWaME" target="_blank" rel="noopener">Can You Guess These Currencies from Around the World?💸</a></td><td class="num" data-v="1792578566">21/10</td><td class="num" data-v="480">8:00</td><td data-v="22"><div class="vc"><span class="bar" style="width:0.6px"></span><span class="num">22</span></div></td><td class="num r" data-v="7">+7</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="0.858">0,9</td></tr><tr><td class="t" data-v="🎮 Topic: Guess the Video Game Character"><a href="https://www.youtube.com/watch?v=-uw3IyXk7X0" target="_blank" rel="noopener">🎮 Topic: Guess the Video Game Character</a></td><td class="num" data-v="1794220414">09/11</td><td class="num" data-v="485">8:05</td><td data-v="15"><div class="vc"><span class="bar" style="width:0.4px"></span><span class="num">15</span></div></td><td class="num r" data-v="15">+15</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="2.256">2,3</td></tr><tr><td class="t" data-v="Coffee Around the World: How Well Do You Know Your Cup? ☕️"><a href="https://www.youtube.com/watch?v=PYUi3EtdARY" target="_blank" rel="noopener">Coffee Around the World: How Well Do You Know Your Cup? ☕️</a></td><td class="num" data-v="1791949376">14/10</td><td class="num" data-v="479">7:59</td><td data-v="15"><div class="vc"><span class="bar" style="width:0.4px"></span><span class="num">15</span></div></td><td class="num r" data-v="3">+3</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="0.455">0,5</td></tr><tr><td class="t" data-v="How Well Do You Know Olympic Badminton?"><a href="https://www.youtube.com/watch?v=O0qB-m4yFa0" target="_blank" rel="noopener">How Well Do You Know Olympic Badminton?</a></td><td class="num" data-v="1793283212">29/10</td><td class="num" data-v="482">8:02</td><td data-v="11"><div class="vc"><span class="bar" style="width:0.3px"></span><span class="num">11</span></div></td><td class="num r" data-v="5">+5</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="0.629">0,6</td></tr><tr><td class="t" data-v="What Causes These Weather and Natural Phenomena? ⛈️🌊"><a href="https://www.youtube.com/watch?v=kpnGOZ9i_Cg" target="_blank" rel="noopener">What Causes These Weather and Natural Phenomena? ⛈️🌊</a></td><td class="num" data-v="1791810924">12/10</td><td class="num" data-v="480">8:00</td><td data-v="9"><div class="vc"><span class="bar" style="width:0.2px"></span><span class="num">9</span></div></td><td class="num r" data-v="2">+2</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="0.261">0,3</td></tr><tr><td class="t" data-v="Plants Quiz 🌿 Can You Guess the Plant?"><a href="https://www.youtube.com/watch?v=iDM0to9lKLA" target="_blank" rel="noopener">Plants Quiz 🌿 Can You Guess the Plant?</a></td><td class="num" data-v="1791210259">05/10</td><td class="num" data-v="559">9:19</td><td data-v="9"><div class="vc"><span class="bar" style="width:0.2px"></span><span class="num">9</span></div></td><td class="num r" data-v="0">0</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="0.217">0,2</td></tr><tr><td class="t" data-v="How Much Do You Know About British Food? 🍵🇬🇧"><a href="https://www.youtube.com/watch?v=_zJFmGv-VoY" target="_blank" rel="noopener">How Much Do You Know About British Food? 🍵🇬🇧</a></td><td class="num" data-v="1794748838">15/11</td><td class="num" data-v="481">8:01</td><td data-v="8"><div class="vc"><span class="bar" style="width:0.2px"></span><span class="num">8</span></div></td><td class="num r" data-v="8">+8</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="8.000">8,0</td></tr><tr><td class="t" data-v="Can You Guess These World-Changing Inventions?💡"><a href="https://www.youtube.com/watch?v=SLSdIDOaU4U" target="_blank" rel="noopener">Can You Guess These World-Changing Inventions?💡</a></td><td class="num" data-v="1792450839">20/10</td><td class="num" data-v="480">8:00</td><td data-v="7"><div class="vc"><span class="bar" style="width:0.2px"></span><span class="num">7</span></div></td><td class="num r" data-v="4">+4</td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="0.258">0,3</td></tr><tr><td class="t" data-v="World Food Quiz: Which Country Is This Dish From?"><a href="https://www.youtube.com/watch?v=NLoXwNkOT0w" target="_blank" rel="noopener">World Food Quiz: Which Country Is This Dish From?</a> <span class="chip">Short</span></td><td class="num" data-v="1793156548">28/10</td><td class="num" data-v="60">1:00</td><td data-v="2"><div class="vc"><span class="bar" style="width:0.1px"></span><span class="num">2</span></div></td><td class="num r" data-v="0">0</td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">–</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="0.105">0,1</td></tr></tbody></table></div></section>
+</div><div role="tabpanel" id="panel-dovui" aria-labelledby="tab-dovui" hidden>
+<header><h2 class="ch">Kênh dovui60s_channel</h2><p>3 video công khai · số liệu lúc 09:08 16/11/2026 (giờ Việt Nam) · <a href="https://www.youtube.com/@dovui60s_channel" target="_blank" rel="noopener">@dovui60s_channel</a></p></header><section class="tiles" aria-label="Tổng toàn kênh"><div class="card"><div class="label">Lượt xem</div><div class="value">176</div></div><div class="card"><div class="label">Lượt like</div><div class="value">1</div></div><div class="card"><div class="label">Comment</div><div class="value">0</div></div><div class="card"><div class="label">Người đăng ký</div><div class="value">1</div></div><div class="card"><div class="label">Lượt share</div><div class="value">–</div><p class="note">YouTube không công khai số này. Xem trong YouTube Studio của chủ kênh.</p></div></section><section class="card"><h2>So với lần chạy trước</h2><p class="note">Đây là lần chạy đầu tiên của kênh này, nên chưa có số tăng thêm. Từ lần sau báo cáo sẽ so với lần này.</p></section><section class="card"><h2>Trang kênh</h2><dl><dt>Ngày lập</dt><dd>12/11/2026</dd><dt>Nội dung</dt><dd>3 video dài, 0 Short, chưa có playlist</dd><dt>Nhịp đăng</dt><dd>3 video trong 3 ngày</dd><dt>Lượt xem trang kênh</dt><dd>116 views</dd><dt>Mô tả</dt><dd>Đố Vui 60s – thử tài trí não chỉ trong 60 giây! 🧠⏱️
+
+Mỗi ngày một video câu đố ngắn: đố vui kiến thức, đoán chữ qua emoji, đố mẹo, nhìn hình đoán tên, tìm điểm khác biệt… Xem, dừng video, đoán đáp án và thử xem bạn được mấy điểm!
+
+✅ Video…</dd></dl></section><section class="card">
+  <h2>Góp ý: vì sao video nhiều hay ít lượt xem</h2>
+  <p class="muted">Kênh mở ngày 12/11/2026, mới có 3 video và 176 lượt xem. Ở quy mô này chênh lệch vài chục view phần lớn là may rủi, nên hầu hết nhận định dưới đây là <b>giả thuyết</b>, chưa đủ dữ liệu để kết luận. Vì video mới đăng có ít ngày hơn để gom view, con số đáng so là <b>view/ngày</b>, không phải tổng view.</p>
+  <div class="two">
+    <div>
+      <h3>Video nhiều lượt xem</h3>
+      <ul>
+        <li><span class="chip data">Có số liệu</span> <b>&quot;Bạn Hiểu Bao Nhiêu Điều Về Phong Tục Ngày Tết Việt Nam?&quot;</b> — 43 view sau ~13 giờ, tức <b>~80 view/ngày</b>, khởi động nhanh nhất kênh. Chủ đề Tết là chủ đề Việt thuần, trùng mùa quan tâm đang lên.</li>
+        <li><span class="chip data">Có số liệu</span> <b>&quot;Bạn Có Thể Đoán Tên Những Câu Lạc Bộ Bóng Đá Nổi Tiếng Trên Thế Giới Không?&quot;</b> — 131 view / 2,5 ngày = <b>~51 view/ngày</b>, và là video duy nhất có like (1). Đây là video nhiều view nhất kênh.</li>
+        <li><span class="chip hypo">Giả thuyết</span> Hai video chạy tốt đều có thumbnail <b>nhiều logo/hình nhỏ để đoán ngay</b> (8 logo CLB; 6 ô phong tục Tết). Người xem nhìn thumbnail là đã bắt đầu chơi. Video yếu nhất chỉ có ông già Noel, không có gì để đoán.</li>
+        <li><span class="chip hypo">Giả thuyết</span> Chủ đề có <b>cộng đồng sẵn</b> (bóng đá) hoặc <b>gắn văn hoá Việt</b> (Tết) kéo view tốt hơn chủ đề lễ phương Tây. Phản chứng: chỉ 3 video, chưa loại trừ được yếu tố YouTube đẩy ngẫu nhiên video đầu kênh.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Video ít lượt xem</h3>
+      <ul>
+        <li><span class="chip data">Có số liệu</span> <b>&quot;Bạn Có Thể Giải Mã Những Câu Đố Giáng Sinh? ❄️&quot;</b> — chỉ <b>2 view sau 1,8 ngày (~1 view/ngày)</b>, kém video bóng đá khoảng 45 lần. Đây là chênh lệch quá lớn để coi là nhiễu.</li>
+        <li><span class="chip hypo">Giả thuyết</span> <b>Tiêu đề và chữ trên thumbnail không khớp nhau</b>: tiêu đề viết &quot;Giải Mã Những Câu Đố Giáng Sinh&quot;, thumbnail viết &quot;Bạn Hiểu Biết Bao Nhiêu Về Giáng Sinh?&quot;. Hai video kia dùng đúng một câu ở cả hai chỗ. Nên thống nhất một câu duy nhất.</li>
+        <li><span class="chip hypo">Giả thuyết</span> <b>Sai mùa</b>: đăng 14/11, còn hơn 5 tuần mới tới Giáng sinh, trong khi nhu cầu tìm nội dung Noel chỉ bùng lên từ giữa tháng 12. Video Tết đăng sớm vẫn chạy vì Tết là mùa dài và người Việt quan tâm quanh năm hơn.</li>
+        <li><span class="chip hypo">Giả thuyết</span> Thumbnail Noel <b>không có câu đố nào để nhìn</b> — chỉ ông già Noel và cây thông, nên người lướt không thấy lý do bấm vào.</li>
+        <li><span class="chip studio">Cần Studio</span> Không thể biết video Noel ít view vì <b>ít hiển thị</b> hay vì <b>CTR thấp</b>. Mở YouTube Studio → video đó → Reach: nếu impressions vài nghìn mà CTR dưới 2% thì lỗi ở thumbnail; nếu impressions chỉ vài chục thì YouTube chưa đẩy, lỗi ở chủ đề/thời điểm.</li>
+        <li><span class="chip studio">Cần Studio</span> Cả 3 video dài <b>~8 phút</b>, không có Shorts nào. Không có dữ liệu giữ chân người xem ở đây; cần xem &quot;Average view duration&quot; trong Studio. Nếu dưới 1 phút thì phải rút ngắn phần mở đầu.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Cần làm gì, theo thứ tự</h2>
+  <ol>
+    <li><b>Hôm nay</b> — Sửa video Giáng sinh: đổi tiêu đề thành đúng câu trên thumbnail (&quot;Bạn Hiểu Biết Bao Nhiêu Về Giáng Sinh? 🎄 Đố Vui 60s&quot;) và làm lại thumbnail theo kiểu 6–8 ô hình nhỏ để đoán, giống video bóng đá. Đây là thay đổi rẻ nhất có cơ sở số liệu rõ nhất.</li>
+    <li><b>Hôm nay</b> — Mở YouTube Studio, ghi lại cho từng video: impressions, CTR, average view duration, và traffic source. Ba con số đó quyết định tuần sau nên sửa thumbnail hay sửa nội dung; báo cáo này không thấy được chúng.</li>
+    <li><b>Hôm nay</b> — Ghim một comment ở mỗi video kiểu &quot;Bạn đúng mấy câu? Comment điểm của bạn 👇&quot;. Hiện cả 3 video đều <b>0 comment</b>; comment là tín hiệu tương tác rẻ nhất để xin.</li>
+    <li><b>Tuần này</b> — Cắt mỗi video dài thành 2–3 <b>Shorts</b> (1 câu đố, 30–45 giây, chữ to, đáp án ở giây cuối). Kênh 1 sub chưa có nguồn đề xuất nào; Shorts là cách nhanh nhất để YouTube thử đẩy kênh mới.</li>
+    <li><b>Tuần này</b> — Đăng đều <b>1 video/ngày vào một khung giờ cố định</b> (gợi ý 20:00, trùng giờ video bóng đá đang chạy tốt nhất). Hiện lịch đăng đang lộn xộn: 20:00, 14:25, 20:12.</li>
+    <li><b>Mỗi video mới</b> — Thumbnail phải có <b>6–8 ô hình để đoán</b> + một chữ lớn dưới 6 chữ (VD &quot;ĐOÁN LOGO&quot;, &quot;TẾT VIỆT&quot;), và câu chữ trên thumbnail <b>trùng khớp</b> với tiêu đề.</li>
+    <li><b>Mỗi video mới</b> — 7 ngày sau khi đăng, mở Studio xem view trong 7 ngày đầu và so với video trước. Đó mới là thước đo tiến bộ; tổng view hiện tại chỉ phản ánh video nào đăng lâu hơn.</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h2>Chủ đề mới để làm video</h2>
+  <p class="muted">Toàn bộ là chủ đề kênh <b>chưa đăng</b>. Tuần này: 16–22/11/2026. Tuần sau: 23–29/11/2026. Mỗi ngày 1 video, đăng 20:00.</p>
+  <table class="ideas">
+    <thead><tr><th>Khi nào</th><th>Chủ đề</th><th>Tiêu đề gợi ý</th><th>Chữ trên thumbnail</th><th>Vì sao chọn</th></tr></thead>
+    <tbody>
+      <tr><td>T2 16/11</td><td>Đoán logo thương hiệu nổi tiếng</td><td>Bạn Có Thể Đoán Tên 20 Thương Hiệu Nổi Tiếng Này Không? 🏆</td><td>ĐOÁN LOGO</td><td>Cùng dạng &quot;đoán logo&quot; với video bóng đá (131 view, ~51 view/ngày, video mạnh nhất kênh) nhưng khán giả rộng hơn, không giới hạn người mê bóng đá.</td></tr>
+      <tr><td>T3 17/11</td><td>Đoán chữ qua emoji (món ăn Việt)</td><td>Nhìn Emoji Đoán Tên Món Ăn Việt Nam 🍜 Bạn Được Mấy Điểm?</td><td>EMOJI ĐỐ MÓN VIỆT</td><td>Chủ đề Việt thuần, cùng mạch với video Tết (43 view sau ~13 giờ, ~80 view/ngày — khởi động nhanh nhất kênh). Emoji lên thumbnail rất dễ nhìn.</td></tr>
+      <tr><td>T4 18/11</td><td>Đoán tỉnh thành qua ảnh địa danh</td><td>Nhìn Hình Đoán Tỉnh Thành Việt Nam 🇻🇳 Bạn Biết Được Mấy Nơi?</td><td>ĐOÁN TỈNH THÀNH</td><td>Dạng &quot;8 ô hình để đoán&quot; đúng như thumbnail bóng đá (131 view); gắn niềm tự hào vùng miền nên dễ kéo comment — hiện cả 3 video đều 0 comment.</td></tr>
+      <tr><td>T5 19/11</td><td>Đố mẹo / câu đố IQ nhanh</td><td>10 Câu Đố Mẹo Chỉ 5% Người Trả Lời Đúng Hết 🧠</td><td>CHỈ 5% ĐÚNG HẾT</td><td>Mô tả kênh đã hứa &quot;đố mẹo&quot; nhưng chưa có video nào. Đây là dạng đố phổ biến nhất, thử xem có đạt mức ~50 view/ngày như video bóng đá không.</td></tr>
+      <tr><td>T6 20/11</td><td>Ngày Nhà giáo 20/11</td><td>Đố Vui Ngày 20/11: Bạn Nhớ Gì Về Thời Đi Học? 🎓</td><td>ĐỐ VUI 20/11</td><td>Đúng ngày lễ, nhu cầu tìm kiếm đạt đỉnh trong 24 giờ. Khác hẳn video Giáng sinh (2 view) vốn đăng sớm hơn mùa tới 5 tuần.</td></tr>
+      <tr><td>T7 21/11</td><td>Đoán bài hát Việt qua lời</td><td>Đoán Tên Bài Hát Việt Chỉ Qua 1 Câu Lời ♪ Bạn Được Mấy Bài?</td><td>ĐOÁN BÀI HÁT</td><td>Nhạc Việt có cộng đồng sẵn, giống cách bóng đá có cộng đồng sẵn (131 view). Cuối tuần hợp nội dung giải trí nhẹ.</td></tr>
+      <tr><td>CN 22/11</td><td>Tìm điểm khác biệt</td><td>Tìm 5 Điểm Khác Biệt Trong 60 Giây 👀 Bạn Thấy Hết Không?</td><td>TÌM 5 ĐIỂM KHÁC</td><td>Mô tả kênh đã hứa dạng này nhưng chưa làm. Thumbnail 2 ảnh cạnh nhau tạo tò mò tức thì — đúng bài học từ thumbnail Noel (chỉ 2 view) vốn không có gì để đoán.</td></tr>
+      <tr><td>T2 23/11</td><td>Đoán quốc kỳ các nước</td><td>Bạn Có Thể Đoán Tên 20 Quốc Kỳ Này Không? 🌍</td><td>ĐOÁN QUỐC KỲ</td><td>Bố cục thumbnail giống hệt video logo CLB (131 view): 8 ô hình nhỏ. Dùng lại công thức đã chạy tốt nhất, chỉ đổi nội dung ô.</td></tr>
+      <tr><td>T3 24/11</td><td>Đoán phim Việt / phim nổi tiếng qua 1 cảnh</td><td>Nhìn 1 Cảnh Đoán Tên Phim 🎬 Bạn Được Mấy Phim?</td><td>ĐOÁN TÊN PHIM</td><td>Cùng công thức &quot;nhìn hình đoán tên&quot; với video mạnh nhất kênh, nhóm khán giả khác để thử mở rộng tệp.</td></tr>
+      <tr><td>T4 25/11</td><td>Đố kiến thức động vật</td><td>Bạn Hiểu Biết Bao Nhiêu Về Thế Giới Động Vật? 🦁</td><td>ĐỐ ĐỘNG VẬT</td><td>Dạng &quot;Bạn hiểu biết bao nhiêu về...&quot; chính là câu đã dùng cho video Tết (~80 view/ngày). Động vật hợp mọi lứa tuổi như mô tả kênh đặt ra.</td></tr>
+      <tr><td>T5 26/11</td><td>Đố lịch sử Việt Nam</td><td>10 Câu Đố Lịch Sử Việt Nam — Bạn Có Qua Nổi Câu Số 7? 🇻🇳</td><td>LỊCH SỬ VIỆT NAM</td><td>Chủ đề Việt, cùng mạch văn hoá với video Tết (43 view/13 giờ). Tiêu đề kiểu &quot;qua nổi câu số 7&quot; tạo lý do xem hết video.</td></tr>
+      <tr><td>T6 27/11</td><td>Đoán cầu thủ bóng đá qua ảnh</td><td>Bạn Có Thể Đoán Tên 15 Cầu Thủ Nổi Tiếng Này Không? ⚽</td><td>ĐOÁN CẦU THỦ</td><td>Phần tiếp theo trực tiếp của video đang mạnh nhất (131 view, 1 like duy nhất của kênh) — khai thác đúng tệp khán giả đã bấm vào lần trước.</td></tr>
+      <tr><td>T7 28/11</td><td>Đố vui gia đình / trẻ em</td><td>Đố Vui Cả Nhà Cùng Chơi 👨‍👩‍👧 20 Câu Dễ Mà Khó</td><td>CẢ NHÀ CÙNG CHƠI</td><td>Cuối tuần, nhắm lượt xem trên TV theo nhóm. Mô tả kênh nói &quot;thách bạn bè cùng chơi&quot; nhưng chưa có video nào làm đúng ý đó.</td></tr>
+      <tr><td>CN 29/11</td><td>Đố Giáng sinh (làm lại, đúng mùa)</td><td>Bạn Hiểu Biết Bao Nhiêu Về Giáng Sinh? 🎄 20 Câu Đố Noel</td><td>ĐỐ VUI NOEL</td><td>Video Noel cũ chỉ 2 view vì đăng quá sớm; cuối tháng 11 là lúc nhu cầu Noel bắt đầu lên. Lần này thumbnail phải có 6–8 ô hình để đoán.</td></tr>
+    </tbody>
+  </table>
+</section>
+<section class="card"><h2>So sánh theo tuần đăng</h2><p class="note">Video đăng càng sớm càng có nhiều thời gian lấy lượt xem, nên các tuần gần đây chưa ngang hàng với tuần đầu.</p><div class="wrap"><table><thead><tr><th>Tuần đăng</th><th class="r">Số video</th><th>Tổng lượt xem</th><th class="r">Lượt xem trung vị</th><th class="r">Like</th><th class="r">Comment</th></tr></thead><tbody><tr><td class="num">09/11 – 15/11</td><td class="num r">3</td><td><div class="vc"><span class="bar" style="width:150.0px"></span><span class="num">176</span></div></td><td class="num r">43,0</td><td class="num r">1</td><td class="num r">0</td></tr></tbody></table></div></section><section class="card"><h2>Tất cả 3 video</h2><p class="note">Bấm tên cột để sắp xếp. “–” ở Like và Comment: YouTube không hiển thị số, thường là 0. “–” ở Like/100 xem: chưa có like hoặc dưới 20 lượt xem.</p><div class="wrap"><table id="videos-dovui" class="videos"><thead><tr><th><button>Video</button></th><th><button>Ngày đăng</button></th><th><button>Dài</button></th><th aria-sort=descending><button>Lượt xem</button></th><th class=r><button>Like</button></th><th class=r><button>Comment</button></th><th class=r><button>Like/100 xem</button></th><th class=r><button>Xem/ngày</button></th></tr></thead><tbody><tr><td class="t" data-v="Bạn Có Thể Đoán Tên Những Câu Lạc Bộ Bóng Đá Nổi Tiếng Trên Thế Giới Không?⚽"><a href="https://www.youtube.com/watch?v=jvsET0X1sU8" target="_blank" rel="noopener">Bạn Có Thể Đoán Tên Những Câu Lạc Bộ Bóng Đá Nổi Tiếng Trên Thế Giới Không?⚽</a></td><td class="num" data-v="1794574852">13/11</td><td class="num" data-v="481">8:01</td><td data-v="131"><div class="vc"><span class="bar" style="width:150.0px"></span><span class="num">131</span></div></td><td class="num r" data-v="1">1</td><td class="num r" data-v="0">0</td><td class="num r" data-v="0.763">0,8</td><td class="num r" data-v="51.441">51,4</td></tr><tr><td class="t" data-v="🧧 Bạn Hiểu Bao Nhiêu Điều Về Phong Tục Ngày Tết Việt Nam?"><a href="https://www.youtube.com/watch?v=Ow2tLCRTFYw" target="_blank" rel="noopener">🧧 Bạn Hiểu Bao Nhiêu Điều Về Phong Tục Ngày Tết Việt Nam?</a></td><td class="num" data-v="1794748375">15/11</td><td class="num" data-v="481">8:01</td><td data-v="43"><div class="vc"><span class="bar" style="width:49.2px"></span><span class="num">43</span></div></td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="43.000">43,0</td></tr><tr><td class="t" data-v="Bạn Có Thể Giải Mã Những Câu Đố Giáng Sinh? ❄️"><a href="https://www.youtube.com/watch?v=ONQzOYD3-mo" target="_blank" rel="noopener">Bạn Có Thể Giải Mã Những Câu Đố Giáng Sinh? ❄️</a></td><td class="num" data-v="1794641139">14/11</td><td class="num" data-v="482">8:02</td><td data-v="2"><div class="vc"><span class="bar" style="width:2.3px"></span><span class="num">2</span></div></td><td class="num r" data-v="0">–</td><td class="num r" data-v="0">0</td><td class="num r" data-v="-1.000">–</td><td class="num r" data-v="1.124">1,1</td></tr></tbody></table></div></section>
+</div>
+</main><script>
+document.querySelectorAll("table.videos").forEach(table=>{
+  const rows=table.tBodies[0], heads=[...table.tHead.rows[0].cells];
+  heads.forEach((th,i)=>th.querySelector("button").addEventListener("click",()=>{
+    const dir=th.getAttribute("aria-sort")==="descending"?1:-1, key=r=>r.cells[i].dataset.v;
+    const sorted=[...rows.rows].sort((a,b)=>dir*(i===0?key(a).localeCompare(key(b),"vi"):key(a)-key(b)));
+    heads.forEach(h=>h.removeAttribute("aria-sort"));
+    th.setAttribute("aria-sort",dir===1?"ascending":"descending");
+    rows.append(...sorted);
+  }));
+});
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+tabs.forEach(tab=>tab.addEventListener("click",()=>{
+  tabs.forEach(t=>{
+    const on=t===tab;
+    t.setAttribute("aria-selected",String(on));
+    document.getElementById(t.getAttribute("aria-controls")).hidden=!on;
+  });
+  location.hash=tab.id.slice(4);
+}));
+const fromHash=document.getElementById("tab-"+location.hash.slice(1));
+if(fromHash) fromHash.click();
+</script></body></html>
